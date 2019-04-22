@@ -23,5 +23,26 @@ class Gossip
 
     def self.find(id)
         CSV.read("./db/gossip.csv")[id.to_i]
-      end
+    end
 end
+#-------------------------------------------------------------------    
+=begin
+    def update(author, content)
+         csv = Chilkat::CkCsv.new()
+        csv.put_HasColumnNames(true)
+        success = csv.LoadFile("./db/gossip.csv")
+        if (success != true)
+            print csv.lastErrorText() + "\n";
+            exit
+            success = csv.SetCell(["gossip_author"], params["gossip_content"])
+            csvDoc = csv.saveToString()
+            print csvDoc + "\n";
+            success = csv.SaveFile("out.csv")
+            if (success != true)
+                print csv.lastErrorText() + "\n";
+            end
+        end
+    end
+
+=end
+

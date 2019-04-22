@@ -19,4 +19,15 @@ class ApplicationController < Sinatra::Base
         @id = params[:id]
         erb :show
     end
+
+    get '/gossips/id/edit/' do
+        erb :edit
+    end
 end
+#---------------------------------------------------------------------------------------
+=begin
+    post '/gossips/id/edit/' do
+       
+    end
+
+=end
